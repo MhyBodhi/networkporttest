@@ -1,4 +1,6 @@
 #!/bin/bash
+#$1 server IP address
+#$2 Test duration
 echo "start..."
 #TCP_STREAM
 echo "start test tcp_stream..."
@@ -6,7 +8,7 @@ echo "TCP_STREAM" > report_netperf.csv
 netperf -H $1 -l $2|tail -n4|grep "^$" -v >> report_netperf.csv
 echo >>report_netperf
 #UDP_STREAM
-echo "start test udp_stream..."想
+echo "start test udp_stream..."
 echo "UDP_STREAM" >> report_netperf.csv
 netperf -t UDP_STREAM -H $1 -l $2|tail -n6|grep "^$" -v >> report_netperf.csv
 echo >>report_netperf.csv

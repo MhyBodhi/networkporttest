@@ -1,4 +1,6 @@
 #!/bin/bash
+#$1 iperf3 server IP address
+#$2 Test file size
 test -e ./result
 if [ $? -ne 0 ];then
     mkdir result
