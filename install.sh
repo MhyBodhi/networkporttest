@@ -18,7 +18,6 @@ sudo apt -y update
 sudo apt -y install python3-pip
 sudo python3 -m pip install --upgrade pip
 sudo python3 -m pip install redis
-sudo python3 -m pip install requests
 #install nc
 sudo apt install netcat*
 #install iperf3
