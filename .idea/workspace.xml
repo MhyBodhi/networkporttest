@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d92ed8b-846c-4eec-8009-d3718dbe4851" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/iperf3/iperf3.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/networkporttest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/networkporttest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iperf3.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ncclient.sh" beforeDir="false" afterPath="$PROJECT_DIR$/nc/ncclient.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ncserver.sh" beforeDir="false" afterPath="$PROJECT_DIR$/nc/ncserver.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netperf.sh" beforeDir="false" afterPath="$PROJECT_DIR$/netperf/netperf.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report.py" beforeDir="false" afterPath="$PROJECT_DIR$/report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nc/ncclient.sh" beforeDir="false" afterPath="$PROJECT_DIR$/nc/ncclient.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nc/ncserver.sh" beforeDir="false" afterPath="$PROJECT_DIR$/nc/ncserver.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +25,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -54,7 +45,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597759352338</updated>
-      <workItem from="1597759374885" duration="5897000" />
+      <workItem from="1597759374885" duration="6341000" />
     </task>
     <servers />
   </component>

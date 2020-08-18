@@ -2,8 +2,6 @@
 # $1 server IP address
 # $2 server port
 # $3 Specify test file
-#init data
-#sudo bash ./install.sh
 
 #client
 echo "start send $3 ..."

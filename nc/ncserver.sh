@@ -1,8 +1,6 @@
 #!/bin/bash
 # $1 listening port
-#init data
-#sever
-sudo bash ./install.sh
+# $2 redis server IP address
 
 echo "start listen port $1 ..."
 nc -l $1 > server_receive
@@ -20,7 +18,7 @@ def verifymd5(file):
             md5_value.update(data)
     return md5_value.hexdigest()
 def connect():
-    pool = redis.ConnectionPool(host="192.168.1.206", port=6379, decode_responses=True)
+    pool = redis.ConnectionPool(host="$2", port=6379, decode_responses=True)
     r = redis.Redis(connection_pool=pool)
     return r
 def report():
