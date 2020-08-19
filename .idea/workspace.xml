@@ -21,9 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0d92ed8b-846c-4eec-8009-d3718dbe4851" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nc/ncclient.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nc/ncserver.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597759352338</updated>
       <workItem from="1597759374885" duration="6341000" />
-      <workItem from="1597798695869" duration="5908000" />
+      <workItem from="1597798695869" duration="6347000" />
     </task>
     <servers />
   </component>
