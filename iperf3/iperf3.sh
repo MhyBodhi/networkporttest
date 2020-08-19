@@ -5,27 +5,31 @@
 # $1 for ip address
 # $2 .sh run time
 # $3 iperf3 -t time
-# $4 ping count
+# $4 sleep seconds==ping -c count
 # add ping_lost 
 # retry fun
 # kill iperf sleep 5
 # fix nan error 
-# add Supervision iperf3
-# fix File_Modify ==
-# default -p 12345
+# add Supervision iperf3 
+# fix File_Modify == 
+# add Internet_IP 
+# default -p 12345  
 
+
+#### judgement root ######################################################################
 ####### Get localhost IP & Initialization for iperf.csv############################3
 clear
 time4=`date +'%s'`
 time5=$[time4+$2] 
 mkdir -p files
 time1=`date "+%F-%H-%M"`
+#iperf="iperf3 -c $1 -t $3 -f k -p 12345"
 iperf="iperf3 -c $1 -t $3 -f k"
 ifconfig eth0 > files/tmp1
 localIP=`sed -n "2p" files/tmp1|awk '{print $2}'|cut -d: -f2`
-
 echo "Localhost,Ethernet_IP,$localIP" >>  ./files/${time1}_iperf.csv
-
+#echo "Localhost,Internet_IP,$Internet_IP" >>  ./files/${time1}_iperf.csv
+#echo "Localhost,Server_IP,$1" >>  ./files/${time1}_iperf.csv
 echo "Remote,$1" >> ./files/${time1}_iperf.csv
 echo "Bandwidth Kbits/sec" >>  ./files/${time1}_iperf.csv
 echo "" >>  ./files/${time1}_iperf.csv
@@ -35,9 +39,9 @@ echo "Date,Start_Time,End_time,Up_Sender,Up_Receiver,Down_Sender,Down_Receiver,J
 ##### Supervision iperf3 #############################################
 while [ $time4 -le $time5 ]
 do
-	   sleepl=300
      File_Modify1=`stat ./files/tmp1 | tail -n 2| head -n 1| awk '{print $3}'`
-     sleep $sleep1 
+     echo "运行到这里..."
+     sleep 300 
      File_Modify2=`stat ./files/tmp1 | tail -n 2| head -n 1| awk '{print $3}'`
      if [ $File_Modify1 == $File_Modify2 ]
      then
@@ -176,7 +180,6 @@ do
     echo -e "\033[45;37mremote Ip is $1 \033[0m"
     echo "$time2,$time3,$time_end,$up_sender,$up_receiver,$down_sender,$down_receiver,$Jitter,$Lost,$ping_Latency,$ping_lost " >> ./files/${time1}_iperf.csv
     echo -e "\033[45;37mrecoder file save as  ./files/${time1}_iperf.csv \033[0m"
-
 time4=`date +'%s'`
 done 
 
