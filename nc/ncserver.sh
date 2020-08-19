@@ -1,12 +1,13 @@
 #!/bin/bash
 # $1 listening port
 # $2 redis server IP address
-
+# $3 waiting time Unit:second
 echo "start listen port $1 ..."
-nc -l $1 > server_receive
+sudo /usr/local/netcat/bin/nc -l -p $1 > server_receive #/bin/nc
 /usr/bin/python3<<-MHY
 import os
 import csv
+import redis
 def verifymd5(file):
     import hashlib
     md5_value = hashlib.md5()
@@ -43,3 +44,5 @@ if __name__ == '__main__':
         result = "fail"
     report()
 MHY
+ps -elf|grep "nc -l"|awk '{print $4}'|head -n1|xargs kill
+echo "test over..."

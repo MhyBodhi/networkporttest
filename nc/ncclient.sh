@@ -19,7 +19,7 @@ def verifymd5(file):
             md5_value.update(data)
     return md5_value.hexdigest()
 def connect():
-    pool = redis.ConnectionPool(host="192.168.1.206", port=6379, decode_responses=True)
+    pool = redis.ConnectionPool(host="$4", port=6379, decode_responses=True)
     r = redis.Redis(connection_pool=pool)
     return r
 if __name__ == '__main__':
@@ -30,4 +30,4 @@ if __name__ == '__main__':
     r.hset("size","client",filesize)
     print("client success...")
 MHY
-nc $1 $2 < $3
+/bin/nc $1 $2 < $3
