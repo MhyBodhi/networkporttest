@@ -6,7 +6,7 @@ echo "start..."
 echo "start test tcp_stream..."
 echo "TCP_STREAM" > report_netperf.csv
 netperf -H $1 -l $2|tail -n4|grep "^$" -v >> report_netperf.csv
-echo >>report_netperf
+echo >>report_netperf.csv
 #UDP_STREAM
 echo "start test udp_stream..."
 echo "UDP_STREAM" >> report_netperf.csv

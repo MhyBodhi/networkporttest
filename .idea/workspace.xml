@@ -40,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../2020-8-19" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -62,7 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597759352338</updated>
       <workItem from="1597759374885" duration="6341000" />
-      <workItem from="1597798695869" duration="8819000" />
+      <workItem from="1597798695869" duration="10587000" />
     </task>
     <servers />
   </component>
@@ -79,5 +79,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="511" y="196" key="FileChooserDialogImpl" timestamp="1597825426097">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="511" y="196" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1597825426097" />
   </component>
 </project>
