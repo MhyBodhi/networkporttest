@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 cat > /etc/apt/sources.list<<MHY
 deb http://zhangchao-2:igentwva@archive.kylinos.cn/kylin/KYLIN-ALL 4.0.2sp2 main restricted universe multiverse
 deb http://archive.kylinos.cn/kylin/KYLIN-ALL 4.0.2sp2-desktop main restricted universe multiverse

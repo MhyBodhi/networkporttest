@@ -2,7 +2,7 @@
 # $1 server IP address
 # $2 server port
 # $3 Specify test file
-
+# $4 redis server IP address
 #client
 echo "start send $3 ..."
 /usr/bin/python3<<-MHY
@@ -19,7 +19,7 @@ def verifymd5(file):
             md5_value.update(data)
     return md5_value.hexdigest()
 def connect():
-    pool = redis.ConnectionPool(host="$4", port=6379, decode_responses=True)
+    pool = redis.ConnectionPool(host="""$4""", port=6379, decode_responses=True)
     r = redis.Redis(connection_pool=pool)
     return r
 if __name__ == '__main__':
