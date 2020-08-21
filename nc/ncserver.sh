@@ -3,7 +3,7 @@
 # $2 redis server IP address
 # $3 waiting time Unit:second
 echo "start listen port $1 ..."
-sudo /usr/local/netcat/bin/nc -l -p $1 > server_receive #/bin/nc
+sudo /bin/nc -l -p $1 > server_receive #/bin/nc
 /usr/bin/python3<<-MHY
 import os
 import csv
@@ -23,7 +23,7 @@ def connect():
     r = redis.Redis(connection_pool=pool)
     return r
 def report():
-    header = ["发送文件大小","接收文件大小","发送端md5","接收端md5","结果"]
+    header = ["发送文件大小(字节)","接收文件大小(字节)","发送端md5","接收端md5","结果"]
     with open("nc.csv","w",encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(header)
