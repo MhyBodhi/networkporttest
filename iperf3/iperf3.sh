@@ -39,11 +39,11 @@ echo "Date,Start_Time,End_time,Up_Sender,Up_Receiver,Down_Sender,Down_Receiver,J
 ##### Supervision iperf3 #############################################
 while [ $time4 -le $time5 ]
 do
-     File_Modify1=`stat ./files/tmp1 | tail -n 2| head -n 1| awk '{print $3}'`
+     File_Modify1=`stat ./files/tmp1 2> /dev/null | tail -n 2| head -n 1| awk '{print $3}'`
      echo "运行到这里..."
      sleep 300 
-     File_Modify2=`stat ./files/tmp1 | tail -n 2| head -n 1| awk '{print $3}'`
-     if [ $File_Modify1 == $File_Modify2 ]
+     File_Modify2=`stat ./files/tmp1 2> /dev/null | tail -n 2| head -n 1| awk '{print $3}'`
+     if [ $File_Modify1 == $File_Modify2 ] && [ ${#File_Modify2} -ne 0 ]
      then
           killall iperf3 >> /dev/null 2>&1
           sleep 1
