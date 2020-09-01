@@ -7,6 +7,7 @@
 echo "start send $3 ..."
 /usr/bin/python3<<-MHY
 import os
+import time
 import redis
 def verifymd5(file):
     import hashlib
@@ -28,6 +29,7 @@ if __name__ == '__main__':
     r = connect()
     r.hset("md5","client",verifymd5("$3"))
     r.hset("size","client",filesize)
+    r.hset("send_time","client",time.time())
     print("client success...")
 MHY
 /bin/nc $1 $2 < $3

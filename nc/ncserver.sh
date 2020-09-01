@@ -1,11 +1,11 @@
 #!/bin/bash
 # $1 listening port
 # $2 redis server IP address
-# $3 waiting time Unit:second
 echo "start listen port $1 ..."
 sudo /bin/nc -l -p $1 > server_receive #/bin/nc
 /usr/bin/python3<<-MHY
 import os
+import time
 import csv
 import redis
 def verifymd5(file):
@@ -23,17 +23,21 @@ def connect():
     r = redis.Redis(connection_pool=pool)
     return r
 def report():
-    header = ["发送文件大小(字节)","接收文件大小(字节)","发送端md5","接收端md5","结果"]
+    header = ["发送文件大小(字节)","接收文件大小(字节)","发送端md5","接收端md5","传输时间(秒)","传输速度(KB/s)","结果"]
     with open("nc.csv","w",encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(header)
-        writer.writerow([client_size,server_size,client_md5,server_md5,result])
+        writer.writerow([client_size,server_size,client_md5,server_md5,transmit_time,transmit_speed,result])
 if __name__ == '__main__':
+    server_receive_time = time.time()
     r = connect()
     result = None
     client_size = r.hget("size","client")
     client_md5 = r.hget("md5","client")
+    client_send_time = r.hget("send_time","client")
+    transmit_time = server_receive_time - float(client_send_time)
     server_size = os.path.getsize("server_receive")
+    transmit_speed = "%.2f"%(server_size / transmit_time / 1024)
     server_md5 = verifymd5("server_receive")
     print("接收文件大小",os.path.getsize("server_receive"))
     if server_md5 == client_md5:
@@ -44,5 +48,5 @@ if __name__ == '__main__':
         result = "fail"
     report()
 MHY
-ps -elf|grep "nc -l"|awk '{print $4}'|head -n1|xargs kill
+#ps -elf|grep "nc -l"|awk '{print $4}'|head -n1|xargs kill
 echo "test over..."
