@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # modify 2015.09.06 12:38
 # up ,down Bandwidth unit is Kbits/sec
 # $1 for ip address
@@ -41,9 +40,10 @@ while [ $time4 -le $time5 ]
 do
      File_Modify1=`stat ./files/tmp1 2> /dev/null | tail -n 2| head -n 1| awk '{print $3}'`
      echo "运行到这里..."
-     sleep 300 
+     sleep 100 
      File_Modify2=`stat ./files/tmp1 2> /dev/null | tail -n 2| head -n 1| awk '{print $3}'`
-     if [ $File_Modify1 == $File_Modify2 ] && [ ${#File_Modify2} -ne 0 ]
+     [ $File_Modify1 == $File_Modify2 ] 2> /dev/null
+     if [ $? -eq 0 ] && [ ${#File_Modify2} -ne 0 ]
      then
           killall iperf3 >> /dev/null 2>&1
           sleep 1
